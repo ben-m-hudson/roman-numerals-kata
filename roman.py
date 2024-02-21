@@ -1,13 +1,16 @@
-# roman numeral calculator
-def add(a: str, b: str) -> str:
-    if len(a + b) >= 5:
-        suffix = (len(a + b) - 5) * "I"
-        return "V" + suffix
+def add(a, b):
+    simple_a = a.replace("IV", "IIII").replace("IX", "VIIII")
+    simple_b = b.replace("IV", "IIII").replace("IX", "VIIII")
 
-    if a == "I" and b == "V":
-        return "VI"
+    simple_sum = simple_a + simple_b
 
-    if a == "II" and b == "V":
-        return "VII"
+    ordered_sum = "".join(reversed(sorted(simple_sum)))
 
-    return a + b
+    canonicalised_sum = (
+        ordered_sum.replace("IIIII", "V")
+        .replace("IIII", "IV")
+        .replace("VV", "X")
+        .replace("VIV", "IX")
+    )
+
+    return canonicalised_sum

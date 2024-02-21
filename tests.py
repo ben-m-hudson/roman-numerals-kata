@@ -9,15 +9,16 @@ from roman import add
         ("I", "I", "II"),
         ("I", "II", "III"),
         ("II", "I", "III"),
-        ("II", "II", "IIII"),
+        ("II", "II", "IV"),
         ("II", "III", "V"),
         ("III", "II", "V"),
         ("III", "III", "VI"),
         ("V", "I", "VI"),
         ("I", "V", "VI"),
-        ("III", "IIII", "VII"),
-        ("IIII", "III", "VII"),
+        ("III", "IV", "VII"),
+        ("IV", "III", "VII"),
         ("II", "V", "VII"),
+        ("II", "IX", "XI")
     ],
 )
 def test1(a: str, b: str, expected: str) -> None:
